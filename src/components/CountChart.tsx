@@ -1,7 +1,7 @@
 'use client'
-import { wh_avatar, wh_search } from "@/constant";
+import { wh_avatar } from "@/constant";
 import { dataCountChart } from "@/constant/dataCountChart";
-import { male_female, more_horizontal_black } from "@/constant/icons";
+import { male_female } from "@/constant/icons";
 import Image from "next/image";
 import { RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
 import TitleComponent from "./TitleComponent";
