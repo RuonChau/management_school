@@ -1,15 +1,28 @@
 
-const dataAttendanceChart = [
+export const dataAttendanceChart = [
   {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
+    name: 'Mon',
+    present: 60,
+    absent: 40,
   },
   {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
+    name: 'Tue',
+    present: 70,
+    absent: 60,
+  },
+  {
+    name: 'Wed',
+    present: 90,
+    absent: 75,
+  },
+  {
+    name: 'Thu',
+    present: 90,
+    absent: 75,
+  },
+  {
+    name: 'Fri',
+    present: 65,
+    absent: 55,
   },
 ];

@@ -1,18 +1,31 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-  async redirects() {
+  // async redirects() {
+  //   return [
+  //     // Basic redirect
+  //     {
+  //       source: '/admin',
+  //       destination: '/',
+  //       permanent: true,
+  //     },
+  //   ]
+  // },
+  async headers() {
     return [
       {
-        source: "/",
-        destination: "/admin",
-        permanent: true,
+        source: '/:path*', // Áp dụng cho mọi đường dẫn trong ứng dụng
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-store', // Tắt cache
+          },
+        ],
       },
     ];
   },
 
-};
+}
 
 
 export default nextConfig;

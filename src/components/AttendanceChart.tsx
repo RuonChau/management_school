@@ -1,40 +1,51 @@
-import { wh_search } from "@/constant";
-import { more_horizontal_black } from "@/constant/icons";
-import Image from "next/image";
+'use client';
+import { dataAttendanceChart } from "@/constant/dataAttendanceChart";
+import { Bar, BarChart, CartesianGrid, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+import TitleComponent from "./TitleComponent";
 
 const AttendanceChart = () => {
+
+
   return (
     <div className="bg-white rounded-xl w-full h-full p-4">
       {/* TITLE */}
-      <div className="flex justify-between items-center">
-        <h1 className="text-lg font-semibold">Students</h1>
-        <Image src={more_horizontal_black} alt="moreDark" width={wh_search} height={wh_search}/>
-      </div>
+      <TitleComponent key={'Attendance'} title="Attendance"/>
 
       {/* CHART */}
-      {/* <div className="relative w-full h-[75%]">
-         <ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            width={500}
-            height={300}
-            data={data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="pv" fill="#8884d8" activeBar={<Rectangle fill="pink" stroke="blue" />} />
-            <Bar dataKey="uv" fill="#82ca9d" activeBar={<Rectangle fill="gold" stroke="purple" />} />
-          </BarChart>
-        </ResponsiveContainer>
-      </div> */}
+      <ResponsiveContainer width="100%" height="95%">
+        <BarChart
+          width={500}
+          height={300}
+          data={dataAttendanceChart}
+          barSize={30}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" axisLine={false} tick={{fill: '#d1d5db'}} tickLine={false} />
+          <YAxis axisLine={false} tick={{fill: '#d1d5db'}} tickLine={false}  />
+          <Tooltip contentStyle={{borderRadius:'15px', borderColor:'lightgray'}} />
+          <Legend align="left" verticalAlign="top" wrapperStyle={{paddingBottom: '40px', paddingTop:"20px"}} />
+          {/* Tùy chỉnh thanh bar với shape */}
+          <Bar
+            dataKey="present"
+            fill= '#FAE27C'
+            radius={[20, 20, 0, 0]}
+            legendType="circle"
+          />
+          <Bar
+            dataKey="absent"
+            fill="#C3EBFA"
+            // shape={<Rectangle fill="gold" stroke="purple" />}
+            radius={[20, 20, 0, 0]}
+            legendType="circle"
+          />
+        </BarChart>
+      </ResponsiveContainer>
 
       {/* BOTTOM */}
       {/* <div className="flex justify-center gap-16">
