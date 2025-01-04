@@ -4,6 +4,12 @@ import Image from 'next/image';
 import more from '../../public/icons/more-horizontal.svg'
 import { wh_menu } from '@/constant';
 
+interface UserCards {
+  type: string
+  date: string
+  quantity: number
+}
+
 const UserCard = ({type, date, quantity}:UserCards) => {
   return (
     <div className="rounded-2xl odd:bg-lamaPurple even:bg-lamaYellow p-4 flex-1 min-w-[130px]">
