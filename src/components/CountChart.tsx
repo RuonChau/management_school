@@ -7,8 +7,6 @@ import { RadialBar, RadialBarChart, ResponsiveContainer } from "recharts";
 import TitleComponent from "./TitleComponent";
 
 
-
-
 const CountChart = () => {
   return (
     <div className="bg-white rounded-xl w-full h-full p-4">
