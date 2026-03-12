@@ -1,7 +1,5 @@
-
-
 import Image from 'next/image';
-import more from '../../public/icons/more-horizontal.svg'
+import more from '../../public/icons/more-horizontal.svg';
 import { wh_menu } from '@/constant';
 
 interface UserCards {
